@@ -37,4 +37,8 @@
   .hero {
     grid-template-columns: 1fr;
   }
+
+  .hero-text h1 {
+    font-size: 36px;
+  }
 }
