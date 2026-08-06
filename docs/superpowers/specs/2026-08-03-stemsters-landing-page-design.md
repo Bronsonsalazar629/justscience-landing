@@ -13,9 +13,9 @@ This document records the decisions made during brainstorming that **change or r
 
 1. **Stack**: React + CSS custom properties, confirmed (brief's assumption was correct).
 
-2. **Hero illustration**: Dropped, not replaced. The brief calls the rocket/planet/dinosaur artwork out of scope; rather than placeholder art, the hero becomes a **single-column, text-only** section. The `grid-template-columns: 1fr 1fr` layout in the brief's CSS sketch does not apply — use a single-column flex/block layout instead.
+2. **Hero illustration**: Reversed — kept as a **placeholder block** (labeled image/collage placeholder, no real artwork), not dropped. Hero keeps the brief's two-column grid (`grid-template-columns: 1fr 1fr`): text left, placeholder block right. Real artwork sourced later replaces the block without a layout change.
 
-3. **Logo strip section**: Omitted entirely (not built, not placeholdered). The brief's `<LogoStrip>` component is dropped from the page structure.
+3. **Logo strip section**: Reversed — kept, rendered as a row of generic placeholder logo boxes (gray rounded rectangles, no text, no real partner names/marks). Real logos sourced later replace the boxes without a layout change.
 
 4. **Fredoka One scope**: Applied **globally** — nav, headings, body copy, and the logo wordmark all use Fredoka One. This overrides the brief's section 2 scope note, which recommended restricting it to the logo wordmark only for readability. `--font-display`, `--font-heading`, and `--font-body` all resolve to `'Fredoka One', system-ui, sans-serif`.
 
@@ -46,14 +46,18 @@ This document records the decisions made during brainstorming that **change or r
 </Header>
 
 <HeroSection bg="--color-bg-hero">
-  <!-- single column, no illustration slot -->
-  <h1>Sparking imagination & innovation one experiment at a time</h1>
-  <ButtonGroup>
-    <Button variant="primary">Learn More</Button>
-    <Button variant="outline">Contact</Button>
-  </ButtonGroup>
-  <p>Join our mission to ignite curiosity and creativity through hands-on STEM projects today!</p>
+  <HeroText>
+    <h1>Sparking imagination & innovation one experiment at a time</h1>
+    <ButtonGroup>
+      <Button variant="primary">Learn More</Button>
+      <Button variant="outline">Contact</Button>
+    </ButtonGroup>
+    <p>Join our mission to ignite curiosity and creativity through hands-on STEM projects today!</p>
+  </HeroText>
+  <HeroIllustrationPlaceholder />  <!-- labeled placeholder box, no real artwork -->
 </HeroSection>
+
+<LogoStripPlaceholder />  <!-- row of generic gray placeholder boxes, no real logos -->
 
 <Divider />
 
@@ -72,8 +76,6 @@ This document records the decisions made during brainstorming that **change or r
 </AboutSection>
 ```
 
-No `<LogoStrip>`. No `<HeroIllustration>`.
-
 ## Component tree
 
 ```
@@ -83,7 +85,8 @@ App
 │   ├── Nav
 │   │   └── NavDropdown ("About")
 │   └── HeaderActions (Button, IconAvatar)
-├── HeroSection (h1, ButtonGroup)
+├── HeroSection (HeroText, HeroIllustrationPlaceholder)
+├── LogoStripPlaceholder
 ├── Divider
 └── AboutSection
     ├── PillGroup
@@ -109,7 +112,7 @@ Each component owns one section of the page, takes content/state as props, and h
 
 ## Color tokens
 
-Use the brief's section 3 values verbatim, plus the header reusing `--color-bg-hero` (decision 5) and no new tokens for the dropped logo-strip/hero-illustration pieces.
+Use the brief's section 3 values verbatim, plus the header reusing `--color-bg-hero` (decision 5). Placeholder blocks (hero illustration, logo strip) use a neutral gray, not a palette token — they're stand-ins, not final design.
 
 ## Spacing & type scale
 
@@ -118,8 +121,8 @@ Use the brief's section 3 spacing scale and type scale as starting values, adjus
 ## Out of scope (unchanged from brief)
 
 - Exact pixel-perfect spacing (estimated values only).
-- Partner logos — omitted per decision 3, not deferred as placeholders.
-- Hero illustration — dropped per decision 2, not deferred as placeholders.
+- Real partner logo assets — placeholder boxes only, per decision 3.
+- Real hero artwork — placeholder block only, per decision 2.
 
 ## Testing notes
 
