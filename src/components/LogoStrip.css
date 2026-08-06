@@ -1,0 +1,16 @@
+.logo-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  padding: var(--space-6) var(--space-7);
+  opacity: 0.85;
+}
+
+.logo-strip-item {
+  background: var(--color-placeholder-bg);
+  border-radius: 8px;
+  width: 120px;
+  height: 48px;
+}
