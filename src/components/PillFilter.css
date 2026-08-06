@@ -1,0 +1,27 @@
+.pill-group {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.pill {
+  border-radius: 999px;
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--text-button);
+  font-family: var(--font-body);
+  background: var(--color-pill-bg);
+  border: 1.5px solid var(--color-pill-border);
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.pill-active {
+  background: var(--color-pill-active-bg);
+  color: var(--color-pill-active-text);
+}
+
+.pill-panel {
+  margin-top: var(--space-4);
+  font-size: var(--text-body);
+  max-width: 480px;
+}
