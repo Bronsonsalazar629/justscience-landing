@@ -1,11 +1,15 @@
-# STEMsters Landing Page — Design Spec
+# JustScience Landing Page — Design Spec
 
-**Status:** Approved for planning
+**Status:** Implemented (see Rebrand note below)
 **Source brief:** `STEMsters Landing Page — Rebuild Spec` (pasted into conversation, not a repo file)
+
+## Rebrand note (post-implementation)
+
+The site originally shipped under the name **STEMsters** per the brief and the decisions below. It was subsequently rebranded to **JustScience**: all "STEMsters" copy/branding was replaced, the colored-letter text wordmark was replaced with a real logo image, the display font was changed from Fredoka One to **Okine Sans**, and the color palette below was replaced with JustScience's brand colors. An **Acknowledgements** section was also added at the bottom of the page, crediting Carnegie Mellon University's Center for Student Diversity and Inclusion. This doc has been updated in place to reflect the current, shipped state — sections below describe what's live now, not the original STEMsters version.
 
 ## Goal
 
-Recreate the STEMsters landing page layout from a reference screenshot, using Fredoka One as the display typeface and a periwinkle/black color palette, built with React + CSS custom-property tokens.
+Recreate the landing page layout from a reference screenshot, using Okine Sans as the display typeface and JustScience's brand palette, built with React + CSS custom-property tokens.
 
 This document records the decisions made during brainstorming that **change or resolve open questions** from the original brief. Where the brief already gives a concrete answer (copy text, button shapes, spacing scale, type scale) and nothing below overrides it, the brief is authoritative — read it alongside this doc, not instead of it.
 
@@ -17,7 +21,7 @@ This document records the decisions made during brainstorming that **change or r
 
 3. **Logo strip section**: Reversed — kept, rendered as a row of generic placeholder logo boxes (gray rounded rectangles, no text, no real partner names/marks). Real logos sourced later replace the boxes without a layout change.
 
-4. **Fredoka One scope**: Applied **globally** — nav, headings, body copy, and the logo wordmark all use Fredoka One. This overrides the brief's section 2 scope note, which recommended restricting it to the logo wordmark only for readability. `--font-display`, `--font-heading`, and `--font-body` all resolve to `'Fredoka One', system-ui, sans-serif`.
+4. **Display font scope**: Applied **globally** — nav, headings, body copy all use the display font. This overrides the brief's section 2 scope note, which recommended restricting a display font to the logo wordmark only for readability. `--font-display`, `--font-heading`, and `--font-body` all resolve to the same family. (Originally Fredoka One; changed to **Okine Sans** — MADE Okine Sans, personal-use license from MadeType — in the rebrand. The logo wordmark itself no longer uses this token at all, since the logo became a real image asset — see decision 12.)
 
 5. **Header background**: The header/nav bar is not transparent — it shares `--color-bg-hero` with the hero section, so header + hero render as one continuous periwinkle-blue block at the top of the page. No separate header color token is needed.
 
@@ -37,11 +41,15 @@ This document records the decisions made during brainstorming that **change or r
     - **Hover/interactive**: buttons, pills, and the About dropdown get hover/tap micro-transitions (scale/color).
     Not in the original reference or brief; added per user request during planning.
 
+12. **Logo wordmark → real image (rebrand)**: The `Logo` component no longer renders "STEMsters" as individually colored `<span>` letters. It renders the actual JustScience logo (`src/assets/logo.png`, trimmed to content bounds) as an `<img>`, sized via CSS (`height: 32px; width: auto`). The per-letter color tokens (`--color-logo-1` through `--color-logo-4`) were removed from `tokens.css` since nothing references them anymore.
+
+13. **Acknowledgements section (rebrand addition)**: A new section was added at the bottom of the page, after `AboutSection`, crediting Carnegie Mellon University's Center for Student Diversity and Inclusion with a heading ("Acknowledgements") and their logo image (`src/assets/cmu-center.png`). Same scroll-reveal (`whileInView`) treatment as `LogoStrip`/`AboutSection`, same token-driven spacing/typography. Not part of the original brief — added directly per user request, not run through the full brainstorming/planning process the original build used.
+
 ## Page structure (final)
 
 ```
 <Header bg="--color-bg-hero">
-  <Logo />                      -- "STEMsters", Fredoka One, multi-color per letter
+  <Logo />                      -- JustScience logo image (src/assets/logo.png)
   <Nav>
     Home | Our Chapters | Volunteer Hours | About ▾ (dropdown: Our Mission / Our Team / FAQ)
   </Nav>
@@ -68,8 +76,8 @@ This document records the decisions made during brainstorming that **change or r
 <Divider />
 
 <AboutSection bg="--color-bg-page">
-  <h2>What is STEMsters?</h2>
-  <p>Discover more about STEMsters and our mission to inspire young minds
+  <h2>What is JustScience?</h2>
+  <p>Discover more about JustScience and our mission to inspire young minds
      through interactive STEM education!</p>
   <PillButtonGroup>
     <Pill>Volunteering</Pill>
@@ -80,6 +88,13 @@ This document records the decisions made during brainstorming that **change or r
     <!-- short placeholder paragraph, content depends on active pill -->
   </PillPanel>
 </AboutSection>
+
+<Divider />
+
+<AcknowledgementsSection>
+  <h2>Acknowledgements</h2>
+  <img src="src/assets/cmu-center.png" alt="Carnegie Mellon University Center for Student Diversity and Inclusion" />
+</AcknowledgementsSection>
 ```
 
 ## Component tree
@@ -87,38 +102,61 @@ This document records the decisions made during brainstorming that **change or r
 ```
 App
 ├── Header
-│   ├── Logo
+│   ├── Logo (image, not text — decision 12)
 │   ├── Nav
 │   │   └── NavDropdown ("About")
 │   └── HeaderActions (Button, IconAvatar)
 ├── HeroSection (HeroText, HeroIllustrationPlaceholder)
 ├── LogoStripPlaceholder
 ├── Divider
-└── AboutSection
-    ├── PillGroup
-    └── PillPanel
+├── AboutSection
+│   ├── PillGroup
+│   └── PillPanel
+├── Divider
+└── AcknowledgementsSection (decision 13)
 ```
 
 Each component owns one section of the page, takes content/state as props, and has no dependency on sibling internals — `PillGroup` reports the active pill up to `AboutSection`, which passes the corresponding placeholder copy into `PillPanel`.
 
 ## Fonts
 
-- Single static weight, `FredokaOne-Regular`, no variable axis.
-- `.woff2` generated from the existing `.ttf` for production; `.ttf` kept as fallback.
-- `OFL.txt` copied to `/public/fonts/OFL.txt` (license required in repo per OFL terms, no UI attribution required).
-- `@font-face` block as given in the brief's section 2.
+- **Okine Sans** (MADE Okine Sans, MadeType) — single Regular weight, personal-use license. Source + `LICENSE.txt` kept in `okine-sans/` at the repo root (untracked, matching how `fredoka-one/` was handled); production copies (`.otf` + `.woff2`) live in `public/fonts/`.
+- `.woff2` generated from the source `.otf` for production; `.otf` kept as fallback.
+- Commercial use of this font requires a separate paid license from MadeType (pixelsurplus.com/products/made-okine-sans) — the personal-use terms apply to this deployment.
+- `@font-face` in `src/styles/global.css`:
+
+```css
+@font-face {
+  font-family: 'Okine Sans';
+  src: url('/fonts/OkineSans-Regular.woff2') format('woff2'),
+       url('/fonts/OkineSans-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+```
 
 ```css
 :root {
-  --font-display: 'Fredoka One', system-ui, sans-serif;
-  --font-heading: 'Fredoka One', system-ui, sans-serif;
-  --font-body: 'Fredoka One', system-ui, sans-serif;
+  --font-display: 'Okine Sans', system-ui, sans-serif;
+  --font-heading: 'Okine Sans', system-ui, sans-serif;
+  --font-body: 'Okine Sans', system-ui, sans-serif;
 }
 ```
 
 ## Color tokens
 
-Use the brief's section 3 values verbatim, plus the header reusing `--color-bg-hero` (decision 5). Placeholder blocks (hero illustration, logo strip) use a neutral gray, not a palette token — they're stand-ins, not final design.
+JustScience brand palette (replaces the original STEMsters periwinkle/black scheme):
+
+| Name | Hex | Used for |
+|---|---|---|
+| Deep Ocean | `#31465A` | Primary text, button/pill borders, primary button background, active-pill text |
+| Matcha Green | `#C7DFA3` | Active-pill background |
+| Vanilla Milk | `#FFFDF7` | Page background, pill background, primary button text |
+| Airy Blue | `#89B9E6` | Hero/header background |
+| Frozen Aqua | `#D9F0FF` | Dividers, placeholder block backgrounds |
+
+Placeholder blocks (hero illustration, logo strip) use Frozen Aqua rather than a separate neutral gray — they're still stand-ins, not final imagery, just styled from the live palette instead of a throwaway gray.
 
 ## Spacing & type scale
 
@@ -135,3 +173,4 @@ Use the brief's section 3 spacing scale and type scale as starting values, adjus
 - Dropdown open/close (click outside to close, keyboard Escape/Enter) needs interaction tests.
 - Pill group active-state switching and corresponding panel content need interaction tests.
 - Responsive breakpoint behavior (nav collapse, stacking) needs a viewport-size test or visual check.
+- `AcknowledgementsSection` needs a render test (heading + logo image with correct alt text) — same pattern as `AboutSection`.
