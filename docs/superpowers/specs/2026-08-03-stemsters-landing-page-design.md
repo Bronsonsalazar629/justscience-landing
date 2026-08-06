@@ -31,6 +31,12 @@ This document records the decisions made during brainstorming that **change or r
 
 10. **Responsive behavior**: Standard collapse breakpoint (~768px) — nav collapses to a hamburger menu, hero and About sections stack to a single column, buttons/pills wrap as needed. Not shown in the reference; designed fresh for this build.
 
+11. **Animation**: Full motion, via `framer-motion` (new dependency). Three layers:
+    - **Page load**: hero content (headline, buttons, paragraph) animates in on mount (fade/slide).
+    - **Scroll-reveal**: logo strip and About section animate in as they enter the viewport (`whileInView`).
+    - **Hover/interactive**: buttons, pills, and the About dropdown get hover/tap micro-transitions (scale/color).
+    Not in the original reference or brief; added per user request during planning.
+
 ## Page structure (final)
 
 ```
