@@ -5,38 +5,32 @@
   --font-body: 'Okine Sans', system-ui, sans-serif;
 
   /* Backgrounds */
-  --color-bg-hero: #8FA8E0;
-  --color-bg-page: #FFFFFF;
+  --color-bg-hero: #89B9E6;
+  --color-bg-page: #FFFDF7;
 
   /* Text */
-  --color-text-primary: #14141A;
-  --color-text-secondary: #2B2B33;
+  --color-text-primary: #31465A;
+  --color-text-secondary: #31465A;
 
   /* Buttons */
-  --color-btn-primary-bg: #0A0A0A;
-  --color-btn-primary-text: #FFFFFF;
-  --color-btn-outline-border: #14141A;
-  --color-btn-outline-text: #14141A;
+  --color-btn-primary-bg: #31465A;
+  --color-btn-primary-text: #FFFDF7;
+  --color-btn-outline-border: #31465A;
+  --color-btn-outline-text: #31465A;
   --color-btn-outline-bg: transparent;
 
   /* Pill buttons */
-  --color-pill-bg: #FFFFFF;
-  --color-pill-border: #14141A;
-  --color-pill-active-bg: #0A0A0A;
-  --color-pill-active-text: #FFFFFF;
+  --color-pill-bg: #FFFDF7;
+  --color-pill-border: #31465A;
+  --color-pill-active-bg: #C7DFA3;
+  --color-pill-active-text: #31465A;
 
   /* Dividers */
-  --color-divider: #E5E5E5;
+  --color-divider: #D9F0FF;
 
   /* Placeholder blocks (hero art, logo strip) */
-  --color-placeholder-bg: #D9D9D9;
-  --color-placeholder-text: #6B6B6B;
-
-  /* Logo wordmark, per letter */
-  --color-logo-1: #E8542A;
-  --color-logo-2: #4A7DD4;
-  --color-logo-3: #E8B93A;
-  --color-logo-4: #4A7DD4;
+  --color-placeholder-bg: #D9F0FF;
+  --color-placeholder-text: #31465A;
 
   /* Spacing */
   --space-1: 4px;

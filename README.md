@@ -1,6 +1,6 @@
-# STEMsters Landing Page
+# JustScience Landing Page
 
-Landing page for STEMsters, built with React + Vite.
+Landing page for JustScience, built with React + Vite.
 
 ## Development
 
@@ -13,5 +13,5 @@ npm run build    # production build
 ## Design tokens
 
 Colors, fonts, spacing, and type scale live in `src/styles/tokens.css` as CSS
-custom properties. Final brand colors are still being decided — update the
-values there rather than hardcoding colors in components.
+custom properties — update the values there rather than hardcoding colors in
+components.

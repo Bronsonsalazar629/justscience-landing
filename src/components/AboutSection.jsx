@@ -11,9 +11,9 @@ export function AboutSection() {
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6 }}
     >
-      <h2>What is STEMsters?</h2>
+      <h2>What is JustScience?</h2>
       <p>
-        Discover more about STEMsters and our mission to inspire young minds
+        Discover more about JustScience and our mission to inspire young minds
         through interactive STEM education!
       </p>
       <PillFilter />

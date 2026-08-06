@@ -11,7 +11,7 @@ const PILLS = [
   {
     id: 'chapters',
     label: 'Our Chapters',
-    copy: "Our Chapters: find a local STEMsters chapter near you — details coming soon.",
+    copy: "Our Chapters: find a local JustScience chapter near you — details coming soon.",
   },
   {
     id: 'curriculum',
