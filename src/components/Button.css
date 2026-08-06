@@ -1,0 +1,21 @@
+.btn {
+  display: inline-block;
+  border-radius: 999px;
+  padding: var(--space-3) var(--space-5);
+  font-size: var(--text-button);
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--color-btn-primary-bg);
+  color: var(--color-btn-primary-text);
+}
+
+.btn-outline {
+  background: var(--color-btn-outline-bg);
+  color: var(--color-btn-outline-text);
+  border: 1.5px solid var(--color-btn-outline-border);
+}
