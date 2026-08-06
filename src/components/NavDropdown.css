@@ -1,0 +1,37 @@
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-trigger {
+  font-family: var(--font-body);
+  font-size: var(--text-nav);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--color-bg-page);
+  border: 1px solid var(--color-divider);
+  border-radius: 8px;
+  list-style: none;
+  padding: var(--space-2) 0;
+  margin: var(--space-2) 0 0;
+  min-width: 140px;
+  z-index: 10;
+}
+
+.nav-dropdown-menu li a {
+  display: block;
+  padding: var(--space-2) var(--space-3);
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+.nav-dropdown-menu li a:hover {
+  background: var(--color-bg-hero);
+}
