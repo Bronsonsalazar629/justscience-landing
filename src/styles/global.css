@@ -1,7 +1,7 @@
 @font-face {
-  font-family: 'Fredoka One';
-  src: url('/fonts/FredokaOne-Regular.woff2') format('woff2'),
-       url('/fonts/FredokaOne-Regular.ttf') format('truetype');
+  font-family: 'Okine Sans';
+  src: url('/fonts/OkineSans-Regular.woff2') format('woff2'),
+       url('/fonts/OkineSans-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;

@@ -1,8 +1,8 @@
 :root {
   /* Fonts */
-  --font-display: 'Fredoka One', system-ui, sans-serif;
-  --font-heading: 'Fredoka One', system-ui, sans-serif;
-  --font-body: 'Fredoka One', system-ui, sans-serif;
+  --font-display: 'Okine Sans', system-ui, sans-serif;
+  --font-heading: 'Okine Sans', system-ui, sans-serif;
+  --font-body: 'Okine Sans', system-ui, sans-serif;
 
   /* Backgrounds */
   --color-bg-hero: #8FA8E0;
