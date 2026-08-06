@@ -1,0 +1,57 @@
+:root {
+  /* Fonts */
+  --font-display: 'Fredoka One', system-ui, sans-serif;
+  --font-heading: 'Fredoka One', system-ui, sans-serif;
+  --font-body: 'Fredoka One', system-ui, sans-serif;
+
+  /* Backgrounds */
+  --color-bg-hero: #8FA8E0;
+  --color-bg-page: #FFFFFF;
+
+  /* Text */
+  --color-text-primary: #14141A;
+  --color-text-secondary: #2B2B33;
+
+  /* Buttons */
+  --color-btn-primary-bg: #0A0A0A;
+  --color-btn-primary-text: #FFFFFF;
+  --color-btn-outline-border: #14141A;
+  --color-btn-outline-text: #14141A;
+  --color-btn-outline-bg: transparent;
+
+  /* Pill buttons */
+  --color-pill-bg: #FFFFFF;
+  --color-pill-border: #14141A;
+  --color-pill-active-bg: #0A0A0A;
+  --color-pill-active-text: #FFFFFF;
+
+  /* Dividers */
+  --color-divider: #E5E5E5;
+
+  /* Placeholder blocks (hero art, logo strip) */
+  --color-placeholder-bg: #D9D9D9;
+  --color-placeholder-text: #6B6B6B;
+
+  /* Logo wordmark, per letter */
+  --color-logo-1: #E8542A;
+  --color-logo-2: #4A7DD4;
+  --color-logo-3: #E8B93A;
+  --color-logo-4: #4A7DD4;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+  --space-6: 48px;
+  --space-7: 64px;
+  --space-8: 96px;
+
+  /* Type scale */
+  --text-nav: 16px;
+  --text-body: 18px;
+  --text-h1: 56px;
+  --text-h2: 40px;
+  --text-button: 15px;
+}
