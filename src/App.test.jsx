@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
 import { MemoryRouter } from 'react-router-dom';
 import App from './App';
@@ -36,9 +36,9 @@ describe('App routing', () => {
         <App />
       </MemoryRouter>
     );
-    expect(
-      screen.getByText('600 S San Gabriel Blvd, San Gabriel, CA 91776')
-    ).toBeInTheDocument();
-    expect(screen.getByText('contact@justscience.org')).toBeInTheDocument();
+    const contactSection = screen.getByRole('heading', { name: 'Contact' }).closest('section');
+    const contactInfo = within(contactSection).getByText(/contact@justscience\.org/).closest('p');
+    expect(contactInfo).toHaveTextContent('600 S San Gabriel Blvd, San Gabriel, CA 91776');
+    expect(contactInfo).toHaveTextContent('contact@justscience.org');
   });
 });

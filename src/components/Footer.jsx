@@ -25,7 +25,6 @@ export function Footer() {
         </nav>
       </div>
       <div className="footer-info">
-        <p>600 S San Gabriel Blvd, San Gabriel, CA 91776</p>
         <p>contact@justscience.org</p>
         <p className="footer-copyright">
           Copyright © 2026 JustScience - All rights reserved

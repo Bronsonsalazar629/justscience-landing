@@ -13,6 +13,11 @@ function renderHeader() {
 }
 
 describe('Header', () => {
+  it('the logo links to home', () => {
+    renderHeader();
+    expect(screen.getByLabelText('JustScience home')).toHaveAttribute('href', '/');
+  });
+
   it('renders all top-level nav links and both dropdown triggers', () => {
     renderHeader();
     expect(screen.getByText('Home').closest('a')).toHaveAttribute('href', '/');

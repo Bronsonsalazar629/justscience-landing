@@ -25,7 +25,9 @@ export function Header() {
   return (
     <header className="header">
       <div className="header-bar">
-        <Logo />
+        <Link to="/" aria-label="JustScience home">
+          <Logo />
+        </Link>
         <button
           type="button"
           className="header-hamburger"
