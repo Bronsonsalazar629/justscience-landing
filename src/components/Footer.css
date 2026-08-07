@@ -1,0 +1,35 @@
+.footer {
+  background: var(--color-bg-hero);
+  padding: var(--space-7) var(--space-6);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-6);
+}
+
+.footer-links h2 {
+  font-size: var(--text-nav);
+  margin: 0 0 var(--space-3);
+}
+
+.footer-links nav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.footer-links nav a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  font-size: var(--text-nav);
+}
+
+.footer-info p {
+  margin: 0 0 var(--space-2);
+  font-size: var(--text-nav);
+  color: var(--color-text-primary);
+}
+
+.footer-copyright {
+  opacity: 0.8;
+}
