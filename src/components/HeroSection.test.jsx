@@ -15,6 +15,11 @@ describe('HeroSection', () => {
         'Join our mission to ignite curiosity and creativity through hands-on STEM projects today!'
       )
     ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "We're a passionate group of students bringing hands-on science experiences directly to communities, inspiring the next generation of scientists and innovators."
+      )
+    ).toBeInTheDocument();
     expect(screen.getByLabelText('Hero illustration placeholder')).toBeInTheDocument();
   });
 });

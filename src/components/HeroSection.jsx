@@ -20,6 +20,11 @@ export function HeroSection() {
           Join our mission to ignite curiosity and creativity through
           hands-on STEM projects today!
         </p>
+        <p>
+          We're a passionate group of students bringing hands-on science
+          experiences directly to communities, inspiring the next
+          generation of scientists and innovators.
+        </p>
       </motion.div>
       <div
         className="hero-placeholder"
