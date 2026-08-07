@@ -1,0 +1,19 @@
+.placeholder-page {
+  padding: var(--space-8) var(--space-7);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.placeholder-page h1 {
+  font-size: var(--text-h2);
+}
+
+.placeholder-page p {
+  font-size: var(--text-body);
+  color: var(--color-text-primary);
+  max-width: 480px;
+  margin: 0;
+}
