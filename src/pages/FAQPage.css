@@ -1,0 +1,28 @@
+.faq {
+  padding: var(--space-8) var(--space-7);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.faq h1 {
+  font-size: var(--text-h2);
+  text-align: center;
+  margin-bottom: var(--space-6);
+}
+
+.faq-item {
+  margin-bottom: var(--space-5);
+}
+
+.faq-item dt {
+  font-size: var(--text-body);
+  font-weight: bold;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-1);
+}
+
+.faq-item dd {
+  margin: 0;
+  font-size: var(--text-body);
+  color: var(--color-text-primary);
+}
