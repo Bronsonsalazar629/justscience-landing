@@ -1,10 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import './NavDropdown.css';
 
-const ITEMS = ['Our Mission', 'Our Team', 'FAQ'];
-
-export function NavDropdown() {
+export function NavDropdown({ label, items }) {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
 
@@ -37,13 +36,13 @@ export function NavDropdown() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        About ▾
+        {label} ▾
       </motion.button>
       {open && (
         <ul className="nav-dropdown-menu" role="menu">
-          {ITEMS.map((item) => (
-            <li key={item} role="menuitem">
-              <a href="#">{item}</a>
+          {items.map((item) => (
+            <li key={item.path} role="menuitem">
+              <Link to={item.path}>{item.label}</Link>
             </li>
           ))}
         </ul>
