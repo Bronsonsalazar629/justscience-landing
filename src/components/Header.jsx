@@ -1,10 +1,23 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Logo } from './Logo';
 import { NavDropdown } from './NavDropdown';
 import { Button } from './Button';
 import './Header.css';
 
-const NAV_LINKS = ['Home', 'Our Chapters', 'Volunteer Hours'];
+const ABOUT_ITEMS = [
+  { label: 'Our Mission', path: '/our-mission' },
+  { label: 'Our Team', path: '/our-team' },
+  { label: 'FAQ', path: '/faq' },
+];
+
+const GET_INVOLVED_ITEMS = [
+  { label: 'Start a Chapter', path: '/start-a-chapter' },
+  { label: 'Volunteer', path: '/volunteer' },
+  { label: 'Sponsor Us', path: '/sponsor' },
+  { label: 'Request a Visit', path: '/request-a-visit' },
+  { label: 'Donate Now', path: '/donate' },
+];
 
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -23,12 +36,23 @@ export function Header() {
           ☰
         </button>
         <nav className={`header-nav ${mobileOpen ? 'header-nav-open' : ''}`}>
-          {NAV_LINKS.map((link) => (
-            <a key={link} href="#" className="header-nav-link">
-              {link}
-            </a>
-          ))}
-          <NavDropdown />
+          <Link to="/" className="header-nav-link">
+            Home
+          </Link>
+          <NavDropdown label="About" items={ABOUT_ITEMS} />
+          <Link to="/our-chapters" className="header-nav-link">
+            Our Chapters
+          </Link>
+          <Link to="/programs" className="header-nav-link">
+            Programs
+          </Link>
+          <Link to="/gallery" className="header-nav-link">
+            Gallery
+          </Link>
+          <NavDropdown label="Get Involved" items={GET_INVOLVED_ITEMS} />
+          <Link to="/volunteer-hours" className="header-nav-link">
+            Volunteer Hours
+          </Link>
         </nav>
         <div className="header-actions">
           <Button variant="outline">Contact Us</Button>
