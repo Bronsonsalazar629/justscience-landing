@@ -26,16 +26,51 @@
   background: var(--color-placeholder-bg);
   border-radius: 16px;
   padding: var(--space-5);
-  min-width: 200px;
+  max-width: 320px;
+  text-align: left;
+}
+
+.founder-photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--color-bg-page);
+  border: 1.5px solid var(--color-pill-border);
+  margin: 0 auto var(--space-3);
 }
 
 .founder-card h2 {
   font-size: var(--text-nav);
   margin: 0 0 var(--space-1);
+  text-align: center;
 }
 
-.founder-card p {
-  margin: 0;
+.founder-role {
+  margin: 0 0 var(--space-3);
   font-size: var(--text-nav);
   color: var(--color-text-primary);
+  text-align: center;
+}
+
+.founder-bio {
+  margin: 0 0 var(--space-3);
+  font-size: var(--text-nav);
+  color: var(--color-text-primary);
+}
+
+.founder-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.founder-tags li {
+  font-size: var(--text-nav);
+  color: var(--color-text-primary);
+  border: 1.5px solid var(--color-pill-border);
+  border-radius: 999px;
+  padding: var(--space-1) var(--space-3);
 }
