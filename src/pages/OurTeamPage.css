@@ -1,0 +1,41 @@
+.our-team {
+  padding: var(--space-8) var(--space-7);
+  text-align: center;
+}
+
+.our-team > h1 {
+  font-size: var(--text-h2);
+  margin-bottom: var(--space-4);
+}
+
+.our-team > p {
+  max-width: 640px;
+  margin: 0 auto var(--space-6);
+  font-size: var(--text-body);
+  color: var(--color-text-primary);
+}
+
+.founder-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-6);
+}
+
+.founder-card {
+  background: var(--color-placeholder-bg);
+  border-radius: 16px;
+  padding: var(--space-5);
+  min-width: 200px;
+}
+
+.founder-card h2 {
+  font-size: var(--text-nav);
+  margin: 0 0 var(--space-1);
+}
+
+.founder-card p {
+  margin: 0;
+  font-size: var(--text-nav);
+  color: var(--color-text-primary);
+}
