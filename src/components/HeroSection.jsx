@@ -11,14 +11,14 @@ export function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h1>Sparking imagination &amp; innovation one experiment at a time</h1>
+        <h1>Spreading the Love of Science</h1>
         <div className="hero-buttons">
-          <Button variant="primary">Learn More</Button>
+          <Button variant="primary" href="#/our-mission">Learn More</Button>
           <Button variant="outline">Contact</Button>
         </div>
         <p>
-          Join our mission to ignite curiosity and creativity through
-          hands-on STEM projects today!
+          Simplifying science and innovation to make education accessible
+          and engaging
         </p>
         <p>
           We're a passionate group of students bringing hands-on science

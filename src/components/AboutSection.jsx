@@ -1,6 +1,24 @@
 import { motion } from 'framer-motion';
-import { PillFilter } from './PillFilter';
 import './AboutSection.css';
+
+const VALUES = [
+  {
+    title: 'Passion for Science',
+    copy: 'We believe science should be accessible, exciting, and inspiring for everyone, regardless of background.',
+  },
+  {
+    title: 'Community First',
+    copy: 'We go directly to communities, meeting people where they are and building lasting relationships.',
+  },
+  {
+    title: 'Hands-On Learning',
+    copy: 'Interactive experiments and demonstrations make complex concepts easy to understand and remember.',
+  },
+  {
+    title: 'Student Leadership',
+    copy: 'Led by students, for the community - we understand the power of peer-to-peer learning.',
+  },
+];
 
 export function AboutSection() {
   return (
@@ -11,12 +29,21 @@ export function AboutSection() {
       viewport={{ once: true, amount: 0.3 }}
       transition={{ duration: 0.6 }}
     >
-      <h2>What is JustScience?</h2>
+      <h2>Our Vision & Values</h2>
       <p>
-        Discover more about JustScience and our mission to inspire young minds
-        through interactive STEM education!
+        To make science education accessible, engaging, and inspiring by
+        bringing hands-on learning experiences directly to communities
+        across the country. We believe every child deserves the chance to
+        fall in love with science.
       </p>
-      <PillFilter />
+      <div className="value-grid">
+        {VALUES.map((value) => (
+          <div key={value.title} className="value-card">
+            <h3>{value.title}</h3>
+            <p>{value.copy}</p>
+          </div>
+        ))}
+      </div>
     </motion.section>
   );
 }

@@ -7,7 +7,6 @@ const QUICK_LINKS = [
   { label: 'Our Chapters', path: '/our-chapters' },
   { label: 'Programs', path: '/programs' },
   { label: 'Start a Chapter', path: '/start-a-chapter' },
-  { label: 'Volunteer Hours', path: '/volunteer-hours' },
   { label: 'Contact', path: '/contact' },
 ];
 
@@ -25,7 +24,7 @@ export function Footer() {
         </nav>
       </div>
       <div className="footer-info">
-        <p>contact@justscience.org</p>
+        <p>contact@justscience.us</p>
         <p className="footer-copyright">
           Copyright © 2026 JustScience - All rights reserved
         </p>

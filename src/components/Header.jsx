@@ -52,9 +52,6 @@ export function Header() {
             Gallery
           </Link>
           <NavDropdown label="Get Involved" items={GET_INVOLVED_ITEMS} />
-          <Link to="/volunteer-hours" className="header-nav-link">
-            Volunteer Hours
-          </Link>
         </nav>
         <div className="header-actions">
           <Button variant="outline">Contact Us</Button>

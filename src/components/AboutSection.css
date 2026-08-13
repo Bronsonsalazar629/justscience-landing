@@ -12,6 +12,33 @@
 }
 
 .about p {
-  font-size: var(--text-body);
-  max-width: 480px;
+  font-size: var(--text-body-lg);
+  max-width: 640px;
+}
+
+.value-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-5);
+  margin-top: var(--space-3);
+}
+
+.value-card {
+  background: var(--color-placeholder-bg);
+  border-radius: 16px;
+  padding: var(--space-5);
+  max-width: 260px;
+  text-align: left;
+}
+
+.value-card h3 {
+  font-size: var(--text-body-lg);
+  margin: 0 0 var(--space-2);
+}
+
+.value-card p {
+  font-size: var(--text-body-lg);
+  color: var(--color-text-primary);
+  max-width: none;
 }

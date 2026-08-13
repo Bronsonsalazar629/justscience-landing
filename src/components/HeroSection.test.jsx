@@ -6,13 +6,16 @@ describe('HeroSection', () => {
   it('renders the headline, both buttons, the body copy, and the illustration placeholder', () => {
     render(<HeroSection />);
     expect(
-      screen.getByText('Sparking imagination & innovation one experiment at a time')
+      screen.getByText('Spreading the Love of Science')
     ).toBeInTheDocument();
-    expect(screen.getByText('Learn More')).toBeInTheDocument();
+    expect(screen.getByText('Learn More').closest('a')).toHaveAttribute(
+      'href',
+      '#/our-mission'
+    );
     expect(screen.getByText('Contact')).toBeInTheDocument();
     expect(
       screen.getByText(
-        'Join our mission to ignite curiosity and creativity through hands-on STEM projects today!'
+        'Simplifying science and innovation to make education accessible and engaging'
       )
     ).toBeInTheDocument();
     expect(

@@ -19,7 +19,7 @@
 }
 
 .hero-text p {
-  font-size: var(--text-body);
+  font-size: var(--text-body-xl);
 }
 
 .hero-placeholder {
@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: var(--text-nav);
+  font-size: var(--text-body-lg);
 }
 
 @media (max-width: 768px) {

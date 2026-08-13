@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import App from './App';
 
 const ROUTES_AND_HEADINGS = [
-  ['/', 'Sparking imagination & innovation one experiment at a time'],
+  ['/', 'Spreading the Love of Science'],
   ['/our-mission', 'Our Mission'],
   ['/our-team', 'Founding Team'],
   ['/faq', 'Frequently Asked Questions'],
@@ -17,7 +17,6 @@ const ROUTES_AND_HEADINGS = [
   ['/request-a-visit', 'Request a Visit'],
   ['/donate', 'Donate Now'],
   ['/contact', 'Contact'],
-  ['/volunteer-hours', 'Volunteer Hours'],
 ];
 
 describe('App routing', () => {

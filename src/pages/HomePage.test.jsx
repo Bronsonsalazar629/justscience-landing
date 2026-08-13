@@ -6,9 +6,10 @@ describe('HomePage', () => {
   it('renders the hero, about, quote, and acknowledgements sections', () => {
     render(<HomePage />);
     expect(
-      screen.getByText('Sparking imagination & innovation one experiment at a time')
+      screen.getByText('Spreading the Love of Science')
     ).toBeInTheDocument();
-    expect(screen.getByText('What is JustScience?')).toBeInTheDocument();
+    expect(screen.getByText('Our Vision & Values')).toBeInTheDocument();
+    expect(screen.getByText('Our Impact')).toBeInTheDocument();
     expect(
       screen.getByText(/Science is not meant to be kept in the lab/)
     ).toBeInTheDocument();

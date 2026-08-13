@@ -1,0 +1,11 @@
+.impact-card {
+  text-align: center;
+}
+
+.impact-value {
+  font-size: var(--text-h2);
+  font-weight: bold;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-2);
+  max-width: none;
+}

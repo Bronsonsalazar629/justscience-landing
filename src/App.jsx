@@ -39,10 +39,6 @@ function App() {
             </PlaceholderPage>
           }
         />
-        <Route
-          path="/volunteer-hours"
-          element={<PlaceholderPage title="Volunteer Hours" />}
-        />
       </Route>
     </Routes>
   );

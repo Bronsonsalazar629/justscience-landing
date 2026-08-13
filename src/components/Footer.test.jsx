@@ -16,7 +16,7 @@ describe('Footer', () => {
       'href',
       '/start-a-chapter'
     );
-    expect(screen.getByText('contact@justscience.org')).toBeInTheDocument();
+    expect(screen.getByText('contact@justscience.us')).toBeInTheDocument();
     expect(
       screen.getByText('Copyright © 2026 JustScience - All rights reserved')
     ).toBeInTheDocument();

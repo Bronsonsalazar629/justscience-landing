@@ -3,14 +3,16 @@ import { describe, it, expect } from 'vitest';
 import { AboutSection } from './AboutSection';
 
 describe('AboutSection', () => {
-  it('renders the heading, body copy, and pill filter', () => {
+  it('renders the heading, mission copy, and all four value cards', () => {
     render(<AboutSection />);
-    expect(screen.getByText('What is JustScience?')).toBeInTheDocument();
+    expect(screen.getByText('Our Vision & Values')).toBeInTheDocument();
     expect(
-      screen.getByText(
-        'Discover more about JustScience and our mission to inspire young minds through interactive STEM education!'
-      )
+      screen.getByText(/To make science education accessible/)
     ).toBeInTheDocument();
-    expect(screen.getByText('Curriculum')).toBeInTheDocument();
+
+    expect(screen.getByText('Passion for Science')).toBeInTheDocument();
+    expect(screen.getByText('Community First')).toBeInTheDocument();
+    expect(screen.getByText('Hands-On Learning')).toBeInTheDocument();
+    expect(screen.getByText('Student Leadership')).toBeInTheDocument();
   });
 });

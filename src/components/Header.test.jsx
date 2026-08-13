@@ -27,10 +27,6 @@ describe('Header', () => {
     );
     expect(screen.getByText('Programs').closest('a')).toHaveAttribute('href', '/programs');
     expect(screen.getByText('Gallery').closest('a')).toHaveAttribute('href', '/gallery');
-    expect(screen.getByText('Volunteer Hours').closest('a')).toHaveAttribute(
-      'href',
-      '/volunteer-hours'
-    );
     expect(screen.getByText('About ▾')).toBeInTheDocument();
     expect(screen.getByText('Get Involved ▾')).toBeInTheDocument();
   });
