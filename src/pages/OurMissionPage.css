@@ -12,3 +12,20 @@
   color: var(--color-text-primary);
   padding: 0 var(--space-7) var(--space-8);
 }
+
+.mission-intro {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-6) var(--space-7) var(--space-6);
+  text-align: left;
+}
+
+.our-mission .quote blockquote {
+  font-size: var(--text-lead);
+}
+
+.mission-intro p {
+  font-size: var(--text-lead);
+  color: var(--color-text-primary);
+  margin: 0 0 var(--space-4);
+}

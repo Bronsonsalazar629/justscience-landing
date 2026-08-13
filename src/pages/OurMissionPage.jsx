@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { QuoteSection } from '../components/QuoteSection';
 import './OurMissionPage.css';
 
@@ -5,8 +6,21 @@ export function OurMissionPage() {
   return (
     <section className="our-mission">
       <h1>Our Mission</h1>
+      <motion.div
+        className="mission-intro"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+      >
+        <p>To show that gaining valuable STEM education does not require immense effort.</p>
+        <p>
+          <strong>JustScience</strong> aims to alleviate the barriers in STEM
+          while ensuring that obscure concepts are simplified to engage and
+          inspire future generations.
+        </p>
+      </motion.div>
       <QuoteSection />
-      <p>More about our mission coming soon.</p>
     </section>
   );
 }

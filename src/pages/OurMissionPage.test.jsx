@@ -9,6 +9,12 @@ describe('OurMissionPage', () => {
     expect(
       screen.getByText(/Science is not meant to be kept in the lab/)
     ).toBeInTheDocument();
-    expect(screen.getByText('More about our mission coming soon.')).toBeInTheDocument();
+    expect(
+      screen.getByText(/does not require immense effort/)
+    ).toBeInTheDocument();
+    expect(screen.getByText('JustScience')).toHaveProperty('tagName', 'STRONG');
+    expect(
+      screen.getByText(/aims to alleviate the barriers in STEM/)
+    ).toBeInTheDocument();
   });
 });
