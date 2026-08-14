@@ -18,12 +18,11 @@ describe('OurTeamPage', () => {
     expect(screen.getByText('Program Development')).toBeInTheDocument();
     expect(screen.getByLabelText('Tom Lan photo placeholder')).toBeInTheDocument();
 
-    expect(screen.getByText('Engjell Dosti')).toBeInTheDocument();
-    expect(screen.getByText(/Grow my passion for stem/)).toBeInTheDocument();
-    expect(screen.getByText('Physics')).toBeInTheDocument();
-    expect(screen.getByText('Marathon Running')).toBeInTheDocument();
+    expect(screen.getByText('Bronson Salazar')).toBeInTheDocument();
+    expect(screen.getByText('[bio.]')).toBeInTheDocument();
+    expect(screen.getByText('[tag.]')).toBeInTheDocument();
     expect(
-      screen.getByLabelText('Engjell Dosti photo placeholder')
+      screen.getByLabelText('Bronson Salazar photo placeholder')
     ).toBeInTheDocument();
   });
 });

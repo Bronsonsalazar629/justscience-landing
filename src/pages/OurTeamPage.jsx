@@ -8,10 +8,10 @@ const FOUNDERS = [
     tags: ['Chemistry Demos', 'Program Development'],
   },
   {
-    name: 'Engjell Dosti',
-    role: 'Founder',
-    bio: 'Started JustScience to "Grow my passion for stem inspired to me by my teacher Dr. St. Juste, and I want to share this world of intricate problems with little kids aspiring to be scientists. PS. I\'m a marathoner"',
-    tags: ['Physics', 'Marathon Running'],
+    name: 'Bronson Salazar',
+    role: '',
+    bio: '[bio.]',
+    tags: ['[tag.]'],
   },
 ];
 

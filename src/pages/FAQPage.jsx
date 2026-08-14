@@ -1,9 +1,18 @@
+import { Button } from '../components/Button';
 import './FAQPage.css';
 
 const FAQS = [
-  { question: 'What age groups do you teach?', answer: 'Answer coming soon.' },
-  { question: 'What is project based learning?', answer: 'Answer coming soon.' },
-  { question: 'How long is a lesson?', answer: 'Answer coming soon.' },
+  {
+    question: 'Who do you teach?',
+    answer:
+      'Primarily, but not limited to, curious aspirers in elementary/middle school.',
+  },
+  {
+    question: 'How will the students learn?',
+    answer:
+      'Through simplified demonstrations and personal kits that allow them to collectively engage in the targeted topics.',
+  },
+  { question: 'How can I get involved?', cta: true },
 ];
 
 export function FAQPage() {
@@ -14,7 +23,15 @@ export function FAQPage() {
         {FAQS.map((faq) => (
           <div key={faq.question} className="faq-item">
             <dt>{faq.question}</dt>
-            <dd>{faq.answer}</dd>
+            <dd>
+              {faq.cta ? (
+                <Button variant="primary" href="#/contact">
+                  Contact Us
+                </Button>
+              ) : (
+                faq.answer
+              )}
+            </dd>
           </div>
         ))}
       </dl>
