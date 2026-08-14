@@ -5,7 +5,14 @@ import './OurMissionPage.css';
 export function OurMissionPage() {
   return (
     <section className="our-mission">
-      <h1>Our Mission</h1>
+      <motion.h1
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6 }}
+      >
+        Our Mission
+      </motion.h1>
       <motion.div
         className="mission-intro"
         initial={{ opacity: 0, y: 30 }}

@@ -19,3 +19,39 @@
   color: var(--color-btn-outline-text);
   border: 1.5px solid var(--color-btn-outline-border);
 }
+
+.btn-liquid {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--color-btn-outline-bg);
+  border: 1.5px solid var(--color-btn-outline-border);
+}
+
+.btn-liquid-fill {
+  position: absolute;
+  inset: -20% -10%;
+  z-index: -1;
+  background: var(--color-btn-primary-bg);
+  border-radius: 45% 45% 40% 40% / 60% 60% 40% 40%;
+  transform: translateY(100%);
+  transition:
+    transform 0.5s cubic-bezier(0.65, 0, 0.35, 1),
+    border-radius 0.5s ease;
+}
+
+.btn-liquid-label {
+  position: relative;
+  z-index: 1;
+  color: var(--color-btn-outline-text);
+  transition: color 0.3s ease;
+}
+
+.btn-liquid:hover .btn-liquid-fill {
+  transform: translateY(0%);
+  border-radius: 40% 40% 45% 45% / 55% 55% 45% 45%;
+}
+
+.btn-liquid:hover .btn-liquid-label {
+  color: var(--color-btn-primary-text);
+}

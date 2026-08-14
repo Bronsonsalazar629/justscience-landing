@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import './OurTeamPage.css';
 
 const FOUNDERS = [
@@ -17,7 +18,13 @@ const FOUNDERS = [
 
 export function OurTeamPage() {
   return (
-    <section className="our-team">
+    <motion.section
+      className="our-team"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.6 }}
+    >
       <h1>Founding Team</h1>
       <p>
         We’re a diverse group of passionate students from various scientific
@@ -43,6 +50,6 @@ export function OurTeamPage() {
           </div>
         ))}
       </div>
-    </section>
+    </motion.section>
   );
 }

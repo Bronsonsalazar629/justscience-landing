@@ -3,6 +3,15 @@ import './Button.css';
 
 export function Button({ variant = 'primary', children, onClick, href }) {
   const className = `btn btn-${variant}`;
+  const content =
+    variant === 'liquid' ? (
+      <>
+        <span className="btn-liquid-fill" aria-hidden="true" />
+        <span className="btn-liquid-label">{children}</span>
+      </>
+    ) : (
+      children
+    );
 
   if (href) {
     return (
@@ -12,7 +21,7 @@ export function Button({ variant = 'primary', children, onClick, href }) {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        {children}
+        {content}
       </motion.a>
     );
   }
@@ -25,7 +34,7 @@ export function Button({ variant = 'primary', children, onClick, href }) {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      {children}
+      {content}
     </motion.button>
   );
 }

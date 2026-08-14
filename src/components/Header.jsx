@@ -54,8 +54,7 @@ export function Header() {
           <NavDropdown label="Get Involved" items={GET_INVOLVED_ITEMS} />
         </nav>
         <div className="header-actions">
-          <Button variant="outline">Contact Us</Button>
-          <span className="header-avatar" aria-hidden="true" />
+          <Button variant="liquid">Contact Us</Button>
         </div>
       </div>
     </header>

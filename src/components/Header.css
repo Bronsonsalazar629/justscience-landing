@@ -37,14 +37,6 @@
   gap: var(--space-3);
 }
 
-.header-avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--color-bg-page);
-  display: inline-block;
-}
-
 @media (max-width: 768px) {
   .header-hamburger {
     display: block;

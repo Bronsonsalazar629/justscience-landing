@@ -43,12 +43,12 @@
   --space-8: 96px;
 
   /* Type scale */
-  --text-nav: 16px;
-  --text-body: 18px;
-  --text-body-lg: 20px;
-  --text-body-xl: 22px;
-  --text-lead: 28px;
-  --text-h1: 56px;
-  --text-h2: 40px;
-  --text-button: 15px;
+  --text-nav: 18px;
+  --text-body: 20px;
+  --text-body-lg: 22px;
+  --text-body-xl: 24px;
+  --text-lead: 32px;
+  --text-h1: 64px;
+  --text-h2: 44px;
+  --text-button: 17px;
 }
