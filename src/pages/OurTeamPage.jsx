@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { AnimatedContent } from '../components/AnimatedContent';
 import './OurTeamPage.css';
 
 const FOUNDERS = [
@@ -14,17 +14,17 @@ const FOUNDERS = [
     bio: '[bio.]',
     tags: ['[tag.]'],
   },
+  {
+    name: 'Murtadha Jodhari',
+    role: '',
+    bio: 'Growing up in a rural town in South Dakota, I experienced firsthand how access to STEM opportunities can be limited compared to larger cities. Through Just Science, I hope to help make hands-on STEM experiences more accessible to young students and inspire the curiosity that can shape their future. I believe every child deserves the opportunity to discover a passion for science, regardless of where they live.',
+    tags: [],
+  },
 ];
 
 export function OurTeamPage() {
   return (
-    <motion.section
-      className="our-team"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6 }}
-    >
+    <AnimatedContent as="section" className="our-team">
       <h1>Founding Team</h1>
       <p>
         We’re a diverse group of passionate students from various scientific
@@ -50,6 +50,6 @@ export function OurTeamPage() {
           </div>
         ))}
       </div>
-    </motion.section>
+    </AnimatedContent>
   );
 }

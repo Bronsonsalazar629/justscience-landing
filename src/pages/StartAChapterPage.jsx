@@ -1,8 +1,9 @@
+import { AnimatedContent } from '../components/AnimatedContent';
 import './StartAChapterPage.css';
 
 export function StartAChapterPage() {
   return (
-    <section className="start-a-chapter">
+    <AnimatedContent as="section" className="start-a-chapter">
       <h1>Start A Chapter</h1>
 
       <div className="chapter-step">
@@ -78,6 +79,6 @@ export function StartAChapterPage() {
           </li>
         </ul>
       </div>
-    </section>
+    </AnimatedContent>
   );
 }

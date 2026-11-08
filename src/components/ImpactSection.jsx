@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { AnimatedContent } from './AnimatedContent';
 import './ImpactSection.css';
 
 const STATS = [
@@ -12,13 +12,7 @@ const STATS = [
 
 export function ImpactSection() {
   return (
-    <motion.section
-      className="about"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6 }}
-    >
+    <AnimatedContent as="section" className="about">
       <h2>Our Impact</h2>
       <p>
         Numbers tell a story, but the real impact is in the curiosity we
@@ -34,6 +28,6 @@ export function ImpactSection() {
           </div>
         ))}
       </div>
-    </motion.section>
+    </AnimatedContent>
   );
 }

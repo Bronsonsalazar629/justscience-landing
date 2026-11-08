@@ -6,8 +6,9 @@ describe('HeroSection', () => {
   it('renders the headline, both buttons, the body copy, and the illustration placeholder', () => {
     render(<HeroSection />);
     expect(
-      screen.getByText('Spreading the Love of Science')
+      screen.getByRole('heading', { name: 'Spreading the Love of Science' })
     ).toBeInTheDocument();
+    expect(document.querySelectorAll('.hero-title-word')).toHaveLength(5);
     expect(screen.getByText('Learn More').closest('a')).toHaveAttribute(
       'href',
       '#/our-mission'

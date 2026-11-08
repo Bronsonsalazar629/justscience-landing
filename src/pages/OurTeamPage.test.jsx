@@ -3,7 +3,7 @@ import { describe, it, expect } from 'vitest';
 import { OurTeamPage } from './OurTeamPage';
 
 describe('OurTeamPage', () => {
-  it('renders the heading, intro bio, and both founders with photo placeholders', () => {
+  it('renders the heading, intro bio, and all founders with photo placeholders', () => {
     render(<OurTeamPage />);
     expect(screen.getByText('Founding Team')).toBeInTheDocument();
     expect(
@@ -23,6 +23,16 @@ describe('OurTeamPage', () => {
     expect(screen.getByText('[tag.]')).toBeInTheDocument();
     expect(
       screen.getByLabelText('Bronson Salazar photo placeholder')
+    ).toBeInTheDocument();
+
+    expect(screen.getByText('Murtadha Jodhari')).toBeInTheDocument();
+    expect(
+      screen.getByText(/Growing up in a rural town in South Dakota/)
+    ).toHaveTextContent(
+      'I believe every child deserves the opportunity to discover a passion for science, regardless of where they live.'
+    );
+    expect(
+      screen.getByLabelText('Murtadha Jodhari photo placeholder')
     ).toBeInTheDocument();
   });
 });

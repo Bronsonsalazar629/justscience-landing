@@ -11,6 +11,20 @@ class IntersectionObserverStub {
   disconnect() {}
 }
 globalThis.IntersectionObserver = IntersectionObserverStub;
+globalThis.scrollTo = () => {};
+
+globalThis.matchMedia = (query) => ({
+  matches: false,
+  media: query,
+  onchange: null,
+  addListener() {},
+  removeListener() {},
+  addEventListener() {},
+  removeEventListener() {},
+  dispatchEvent() {
+    return false;
+  },
+});
 
 afterEach(() => {
   cleanup();

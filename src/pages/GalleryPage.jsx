@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { AnimatedContent } from '../components/AnimatedContent';
 import './GalleryPage.css';
 
 const SLIDE_COUNT = 6;
@@ -20,7 +21,7 @@ export function GalleryPage() {
   };
 
   return (
-    <section className="gallery">
+    <AnimatedContent as="section" className="gallery">
       <h1>Gallery</h1>
       <div className="gallery-carousel" aria-label="Project gallery placeholder">
         <button
@@ -78,6 +79,6 @@ export function GalleryPage() {
           />
         ))}
       </div>
-    </section>
+    </AnimatedContent>
   );
 }

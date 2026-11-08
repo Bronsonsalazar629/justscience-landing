@@ -12,6 +12,15 @@
   margin-bottom: var(--space-4);
 }
 
+.hero-title-word {
+  display: inline-block;
+  margin-right: 0.25em;
+}
+
+.hero-title-word:last-child {
+  margin-right: 0;
+}
+
 .hero-buttons {
   display: flex;
   gap: var(--space-3);

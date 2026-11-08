@@ -6,8 +6,9 @@ describe('HomePage', () => {
   it('renders the hero, about, quote, and acknowledgements sections', () => {
     render(<HomePage />);
     expect(
-      screen.getByText('Spreading the Love of Science')
+      screen.getByRole('heading', { name: 'Spreading the Love of Science' })
     ).toBeInTheDocument();
+    expect(screen.queryByLabelText('Partner logos placeholder')).not.toBeInTheDocument();
     expect(screen.getByText('Our Vision & Values')).toBeInTheDocument();
     expect(screen.getByText('Our Impact')).toBeInTheDocument();
     expect(

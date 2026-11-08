@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { AnimatedContent } from './AnimatedContent';
 import './AboutSection.css';
 
 const VALUES = [
@@ -22,13 +22,7 @@ const VALUES = [
 
 export function AboutSection() {
   return (
-    <motion.section
-      className="about"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6 }}
-    >
+    <AnimatedContent as="section" className="about">
       <h2>Our Vision & Values</h2>
       <p>
         To make science education accessible, engaging, and inspiring by
@@ -44,6 +38,6 @@ export function AboutSection() {
           </div>
         ))}
       </div>
-    </motion.section>
+    </AnimatedContent>
   );
 }

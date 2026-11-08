@@ -29,15 +29,14 @@ describe('App routing', () => {
     expect(screen.getByRole('heading', { name: heading })).toBeInTheDocument();
   });
 
-  it('the Contact route also shows the address and email', () => {
+  it('the Contact route shows the email without an address', () => {
     render(
       <MemoryRouter initialEntries={['/contact']}>
         <App />
       </MemoryRouter>
     );
     const contactSection = screen.getByRole('heading', { name: 'Contact' }).closest('section');
-    const contactInfo = within(contactSection).getByText(/contact@justscience\.org/).closest('p');
-    expect(contactInfo).toHaveTextContent('600 S San Gabriel Blvd, San Gabriel, CA 91776');
-    expect(contactInfo).toHaveTextContent('contact@justscience.org');
+    expect(within(contactSection).getByText('contact@justscience.org')).toBeInTheDocument();
+    expect(within(contactSection).queryByText(/600 S San Gabriel Blvd/)).not.toBeInTheDocument();
   });
 });

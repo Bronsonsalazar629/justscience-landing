@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { AnimatedContent } from '../components/AnimatedContent';
 import { Button } from '../components/Button';
 import './FAQPage.css';
 
@@ -21,13 +22,7 @@ export function FAQPage() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <motion.section
-      className="faq"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6 }}
-    >
+    <AnimatedContent as="section" className="faq">
       <h1>Frequently Asked Questions</h1>
       <div className="faq-accordion">
         {FAQS.map((faq, index) => {
@@ -70,6 +65,6 @@ export function FAQPage() {
           );
         })}
       </div>
-    </motion.section>
+    </AnimatedContent>
   );
 }

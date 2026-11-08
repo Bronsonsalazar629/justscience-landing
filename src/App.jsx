@@ -31,11 +31,7 @@ function App() {
           path="/contact"
           element={
             <PlaceholderPage title="Contact">
-              <p>
-                600 S San Gabriel Blvd, San Gabriel, CA 91776
-                <br />
-                contact@justscience.org
-              </p>
+              <p>contact@justscience.org</p>
             </PlaceholderPage>
           }
         />
